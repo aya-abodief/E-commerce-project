@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/component/common/navbar";
+import MainProvider from "@/provider/mainProvider";
+import Footer from "@/component/common/footer";
+import { Toaster } from "sonner";
+import CartContextProvider from "@/provider/cartContext";
+import WishListProvider from "@/provider/wishListProvider";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,13 +28,29 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>)
+
+
+{
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} >
+        <MainProvider>
+          <CartContextProvider>
+            < WishListProvider>
+              <Navbar />
+
+              <div className="pt-20">
+                {children}
+              </div>
+              <Toaster richColors />
+              <Footer />
+
+            </WishListProvider>
+
+          </CartContextProvider>
+        </MainProvider>
+
       </body>
     </html>
   );
