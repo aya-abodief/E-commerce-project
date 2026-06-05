@@ -26,10 +26,10 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import Image from 'next/image'
-import { Heart, ShoppingCart, Star } from 'lucide-react'
-import { Button } from "@/components/ui/button"
+import {  Star } from 'lucide-react'
+
 import Link from 'next/link'
-import ProductDetailBtn from "@/component/product/productDetailBtn"
+
 import HeartBtn from "@/component/product/heartBtn"
 
 
