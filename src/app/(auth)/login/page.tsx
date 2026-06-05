@@ -11,6 +11,7 @@ import { Spinner } from "@/components/ui/spinner"
 import { useRouter } from "next/navigation"
 import { signIn } from "next-auth/react"
 import Link from "next/link"
+import { toast } from "sonner"
 
 
 
@@ -32,17 +33,28 @@ export default function Login() {
 
   async function handleLogin(values: loginType) {
     // console.log(values)
-    const response = await signIn("credentials",
+try
+{
+      const response = await signIn("credentials",
       {
         email: values.email,
         password: values.password,
         redirect: false
       }
     )
-    console.log("response", response);
+    console.log("response from login", response);
     if (response?.ok) {
-      router.push('/products')
+      toast.success("login successfully" , {position:"top-center"})
+      router.push('/')
     }
+    if(response?.error)
+    {
+          toast.error(response.error , {position:"top-center"})
+    }
+}catch(error)
+{
+  toast.error("wrong occure", {position:"top-center"})
+}
   }
 
 

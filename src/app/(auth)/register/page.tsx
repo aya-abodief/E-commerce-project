@@ -13,6 +13,7 @@ import { registerSchema, registerType } from "@/auth.schema/auth.schema"
 import { Spinner } from "@/components/ui/spinner"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
+import { toast } from "sonner"
 
 
 
@@ -36,7 +37,8 @@ export default function Register() {
   async function handleRegister(values: registerType) {
     console.log(values)
 
-    const response = await fetch("https://ecommerce.routemisr.com/api/v1/auth/signup", {
+try{
+      const response = await fetch("https://ecommerce.routemisr.com/api/v1/auth/signup", {
       method: "post",
       body: JSON.stringify(values),
       headers: {
@@ -44,10 +46,18 @@ export default function Register() {
       }
     })
     const data = await response.json()
-    console.log("data", data)
+    console.log("data from register", data)
     if (data.message == "success") {
+       toast.success("register successfully" , {position:"top-center"})
       router.push("/login")
     }
+    if(data.statusMsg=="fail"){
+       toast.error(data.message , {position:"top-center"})
+    }
+}catch(error){
+ toast.error("wrong occure" , {position:"top-center"})
+}
+
   }
 
 
