@@ -2,11 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   
-eslient:{
-  ignoreDuringBuild:true ,
+eslint:{
+  ignoreDuringBuilds:true ,
  
 },
-typeScript :{
+typescript :{
   ignoreBuildErrors:true,
 },
    images: {
