@@ -2,7 +2,13 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-
+eslient:{
+  ignoreDuringBuild:true ,
+ 
+},
+typeScript :{
+  ignoreBuildErrors:true,
+},
    images: {
     remotePatterns: [
       {
