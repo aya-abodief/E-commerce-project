@@ -3,7 +3,7 @@ import { SessionProvider } from 'next-auth/react'
 
 import React from 'react'
 
-export default function MainProvider({ children }: any) {
+export default function MainProvider({ children }: {children:React.ReactNode}) {
   return <>
 
     <SessionProvider>

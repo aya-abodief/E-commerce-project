@@ -14,7 +14,7 @@ export interface IBrandDetails {
   description: string
   quantity: number
   price: number
-  availableColors: any[]
+  availableColors: unknown[]
   imageCover: string
   category: ICategory
   brand: IBrand
