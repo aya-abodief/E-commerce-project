@@ -47,7 +47,7 @@ try
       toast.success("login successfully" , {position:"top-center"})
       router.push('/')
     }
-    if(response?.error)
+   else if(response?.error)
     {
           toast.error(response.error , {position:"top-center"})
     }
