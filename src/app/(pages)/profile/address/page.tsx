@@ -24,7 +24,7 @@ export default function AddressPage() {
   const [addresses, setAddresses] = useState<addressI[] | []>([])
 
 
-  const { data: session, status } = useSession()
+  const { data: session } = useSession()
 
 
   const form = useForm({

@@ -3,7 +3,7 @@
 import { OrdersI } from '@/typescriptInterface/allorders'
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { Outfit, Poppins } from "next/font/google";
+import { Outfit} from "next/font/google";
 
 import {
   Collapsible,

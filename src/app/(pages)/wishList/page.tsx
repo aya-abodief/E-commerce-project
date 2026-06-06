@@ -2,13 +2,13 @@
 "use client"
 import { getLoggedWishList } from '@/actions/productHeartApis.action'
 import WishListItem from '@/component/wishList/wishListItem';
-import { Button } from '@/components/ui/button';
+
 import { WishListI } from '@/typescriptInterface/wishlist';
 import { Heart } from 'lucide-react';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
-export default function wishList() {
+export default function WishList() {
 
   const [productsOfWishList, setProductsOfWishList] = useState<WishListI[] | []>([])
 
@@ -20,7 +20,7 @@ export default function wishList() {
       setProductsOfWishList(wishListProducts)
 
     }
-    catch (error: any) {
+    catch (error) {
       console.log(error);
 
     }

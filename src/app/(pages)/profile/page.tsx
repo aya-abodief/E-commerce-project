@@ -1,14 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import { Button } from "@/components/ui/button"
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card"
+
 import { House, Pencil, UserRound } from 'lucide-react'
 import { useSession } from 'next-auth/react'
 import Link from 'next/link'
@@ -17,7 +9,7 @@ import { allOrdersApi, getAddressApis } from '@/actions/profile.action'
 
 export default function ProfilePage() {
 
-    const { data: session, status } = useSession()
+    const { data: session } = useSession()
 
     const [data, setData] = useState<OrdersI[] | []>([])
     const [address, setAddress] = useState<addressI[] | []>([])

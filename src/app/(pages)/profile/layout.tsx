@@ -1,10 +1,10 @@
 "use client"
 import { ArrowRight, ListOrdered, LockKeyhole, MapPin, Pencil, UserRound } from 'lucide-react'
 import { useSession } from 'next-auth/react'
-import Image from 'next/image'
+
 import Link from 'next/link'
 import React from 'react'
-export default function layout({
+export default function Layout({
     children }: Readonly<{
         children: React.ReactNode;
     }>) {

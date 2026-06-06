@@ -1,7 +1,7 @@
 
 "use client"
 
-import { changePasswordApis, editProfileApis } from "@/actions/profile.action"
+import {  editProfileApis } from "@/actions/profile.action"
 import { Button } from "@/components/ui/button"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
@@ -15,7 +15,7 @@ import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 export default function EditProfile() {
   const router = useRouter()
-  const { data: session, status } = useSession()
+  const { data: session } = useSession()
   const form = useForm({
 
     resolver : zodResolver(editProfileSchema),

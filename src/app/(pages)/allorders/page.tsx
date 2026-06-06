@@ -1,10 +1,9 @@
 "use client"
-import { allOrdersApi, getAddressApis } from '@/actions/profile.action';
+import { allOrdersApi} from '@/actions/profile.action';
 import OrderItem from '@/component/order/orderItem';
 
 import { OrdersI } from '@/typescriptInterface/allorders';
 
-import { addressI } from "@/typescriptInterface/allorders"
 import { useSession } from 'next-auth/react';
 
 import React, { useEffect, useState } from 'react'
@@ -12,7 +11,7 @@ import React, { useEffect, useState } from 'react'
 export default function OrdersPage() {
 
 
-  const { data: session, status } = useSession()
+  const { data: session} = useSession()
 
   const [data, setData] = useState<OrdersI[] | []>([])
 

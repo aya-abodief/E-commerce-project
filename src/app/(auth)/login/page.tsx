@@ -103,7 +103,7 @@ try
               >
 
               </FormField >
-              <p className="flex justify-start  text-[#A21A4c] text-sm  mb-2 ">You don't have an account? <Link href={"/register"} className="underline text-blue-500 cursor-pointer px-1.5">Register Now</Link></p>
+              <p className="flex justify-start  text-[#A21A4c] text-sm  mb-2 ">{"You don't have an account?" } <Link href={"/register"} className="underline text-blue-500 cursor-pointer px-1.5">Register Now</Link></p>
               <Link href={"/forgetPassword"}>
                 <p className="flex justify-end underline text-[#A21A4c] text-sm cursor-pointer mb-2 ">Forgot password ?</p>
               </Link>

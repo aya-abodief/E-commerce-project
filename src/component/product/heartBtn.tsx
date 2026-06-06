@@ -9,7 +9,7 @@ import { toast } from 'sonner';
 
 export default function HeartBtn({ prodId }: { prodId: string }) {
 
-  const [isLiked, setIsLiked] = useState(false)
+
 const { handleWishList} = useContext(wishListContext)
   async function addToHeart(prodId: string) {
     try {
@@ -21,9 +21,9 @@ const { handleWishList} = useContext(wishListContext)
       }
       await  handleWishList()
 
-    } catch (error: any) {
+    } catch (error) {
       console.log(error);
-      toast.error(error.message, { position: "top-center" })
+      toast.error("wrong occure", { position: "top-center" })
 
     } finally {
      

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Categories from "./(pages)/categories/page";
 import Brand from "./(pages)/brands/page";
-import { Badge } from "@/components/ui/badge";
+
 
 export default function Home() {
   return (

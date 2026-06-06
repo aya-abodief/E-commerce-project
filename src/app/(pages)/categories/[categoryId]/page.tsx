@@ -1,7 +1,7 @@
 
 import { Params } from 'next/dist/server/request/params'
 import React from 'react'
-import { Button } from "@/components/ui/button"
+
 
 import {
   Card,
@@ -12,7 +12,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import Image from 'next/image'
-import { Heart, Star } from 'lucide-react'
+import {  Star } from 'lucide-react'
 import BtnCart from '@/component/product/productBtn'
 import Link from 'next/link'
 import { ICategoryDetail } from '@/typescriptInterface/category'

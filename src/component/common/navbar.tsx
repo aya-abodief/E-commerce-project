@@ -9,11 +9,11 @@ import {
 import Link from 'next/link'
 import {
   NavigationMenu,
-  NavigationMenuContent,
+
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
+
 } from "@/components/ui/navigation-menu"
 
 import {
@@ -21,7 +21,7 @@ import {
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
+
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"

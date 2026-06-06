@@ -1,16 +1,7 @@
 import { ICategory } from '@/typescriptInterface/category'
 import React from 'react'
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { IBrand } from '@/typescriptInterface/brand'
-import Image from 'next/image'
+
 import CategoryItem from '@/component/categoryItem'
 
 export default async function Categories() {

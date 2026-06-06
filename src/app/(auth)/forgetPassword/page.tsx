@@ -11,7 +11,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { forgetPasswordSchema, forgetPasswordType } from '@/auth.schema/auth.schema'
 
 
-export default function forgetPasswordPage() {
+export default function ForgetPasswordPage() {
 
     const router = useRouter()
     const form = useForm({

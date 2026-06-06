@@ -12,7 +12,7 @@ const handler = NextAuth({
                 email: { label: "email", type: "email", placeholder: "Enter your email" },
                 password: { label: "Password", type: "password", placeholder: "Enter your password" }
             },
-            async authorize(credentials, req) {
+            async authorize(credentials) {
         
                 const res = await fetch("https://ecommerce.routemisr.com/api/v1/auth/signin", {
                     method: 'POST',

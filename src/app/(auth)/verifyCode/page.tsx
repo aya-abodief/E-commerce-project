@@ -11,7 +11,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { resetCodeSchema, resetCodeType } from '@/auth.schema/auth.schema'
 
 
-export default function resetCode() {
+export default function ResetCode() {
 
     const router = useRouter()
     const form = useForm({

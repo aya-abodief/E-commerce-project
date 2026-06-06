@@ -4,7 +4,7 @@ import { addToCartApi } from '@/actions/productCartApis.action'
 import { Button } from '@/components/ui/button'
 import { Spinner } from '@/components/ui/spinner'
 import { cartContext } from '@/provider/cartContext'
-import { Heart, ShoppingCart } from 'lucide-react'
+import { ShoppingCart } from 'lucide-react'
 import { redirect } from 'next/navigation'
 import React, { useContext, useState } from 'react'
 import { toast } from 'sonner'
@@ -24,9 +24,9 @@ export default function BtnCart({ productId ,className }: { productId: string , 
             }
             handleTotalCarts()
         }
-        catch (error:any) {
+        catch (error) {
             console.log(error);
-            toast.error(error.message, { position: "top-center" })
+            toast.error("wrong occure", { position: "top-center" })
             redirect("/login")
 
         } finally {

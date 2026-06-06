@@ -1,7 +1,7 @@
 "use client"
 import { Button } from '@/components/ui/button'
 import { WishListI } from '@/typescriptInterface/wishlist'
-import { Heart, ShoppingCart, Trash2 } from 'lucide-react'
+import { Heart,  Trash2 } from 'lucide-react'
 import Image from 'next/image'
 import React, { useContext, useState } from 'react'
 import BtnCart from '../product/productBtn'
@@ -9,7 +9,7 @@ import { removeItemFrmWishListApis } from '@/actions/productHeartApis.action'
 import { Spinner } from '@/components/ui/spinner'
 import { toast } from 'sonner'
 import { wishListContext } from '@/provider/wishListProvider'
-import Link from 'next/link'
+
 
 export default function WishListItem({ productWishList, getLoggedWishList }: { productWishList: WishListI, getLoggedWishList: () => void }) {
     const [isLoading, setIsLoading] = useState(false)
@@ -32,7 +32,7 @@ export default function WishListItem({ productWishList, getLoggedWishList }: { p
             await handleWishList()
             console.log(totalWishes);
 
-        } catch (error: any) {
+        } catch (error) {
             toast.error("wrong occure", { position: "top-center" })
         } finally {
             setIsLoading(false)

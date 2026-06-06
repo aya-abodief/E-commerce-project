@@ -1,6 +1,7 @@
 "use server"
  
 import { getUserToken } from "@/lib/authToken"
+import { checkoutType } from "@/profile.schema/profile.schema"
 
 export async function addToCartApi(productId: string) {
 
@@ -103,7 +104,7 @@ export async function clearProductCart() {
 }
 
 
-export async function chickingUp(cartId:string , formData:any) {
+export async function chickingUp(cartId:string , formData:checkoutType) {
     const token = await getUserToken()
      if (!token)
     {
@@ -122,7 +123,7 @@ export async function chickingUp(cartId:string , formData:any) {
     const data = await response.json()
     return data
 }
-export async function cashOnDeliveryApi(cartId:string , formData:any) {
+export async function cashOnDeliveryApi(cartId:string , formData:checkoutType) {
     const token = await getUserToken()
      if (!token)
     {
