@@ -115,7 +115,9 @@ export async function deleteAddressApis(id:string) {
 export async function allOrdersApi()
 {
      const token = await getUserToken()
-    
+      if (!token) {
+        throw new Error(" you must Logged in to do this action")
+    }
       const decodedToken: { id: string } = jwtDecode(token);
       console.log("decodedToken", decodedToken);
       const userId = decodedToken.id
