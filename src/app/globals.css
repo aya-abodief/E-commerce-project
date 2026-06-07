@@ -129,6 +129,11 @@ background-color:#f8f8f0 ;
 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
   }
+  .container
+  {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
   .main-color
   {
     color: #A21A4c;
