@@ -4,6 +4,7 @@
 import { addToHeartApi } from '@/actions/productHeartApis.action';
 import { wishListContext } from '@/provider/wishListProvider';
 import { Heart } from 'lucide-react'
+import { redirect } from 'next/navigation';
 import React, { useContext, useState } from 'react'
 import { toast } from 'sonner';
 
@@ -23,7 +24,8 @@ const { handleWishList} = useContext(wishListContext)
 
     } catch (error) {
       console.log(error);
-      toast.error("wrong occure", { position: "top-center" })
+      toast.error("You must logged in to do this action", { position: "top-center" })
+      redirect("/login")
 
     } finally {
      
