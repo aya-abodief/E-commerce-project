@@ -9,7 +9,7 @@ import { redirect } from 'next/navigation'
 import React, { useContext, useState } from 'react'
 import { toast } from 'sonner'
 
-export default function BtnCart({ productId ,className }: { productId: string , className:string }) {
+export default function BtnCart({ productId, className }: { productId: string, className: string }) {
 
     const [isLoading, setIsLoading] = useState(false)
     const { handleTotalCarts } = useContext(cartContext)
@@ -26,7 +26,13 @@ export default function BtnCart({ productId ,className }: { productId: string , 
         }
         catch (error) {
             console.log(error);
-            toast.error("wrong occure", { position: "top-center" })
+            if (error instanceof Error) {
+                toast.error(error.message, { position: "top-center" })
+            }
+            else{
+                  toast.error("some thin went wrong", { position: "top-center" })
+            }
+
             redirect("/login")
 
         } finally {
@@ -39,7 +45,7 @@ export default function BtnCart({ productId ,className }: { productId: string , 
             {isLoading ? <Spinner></Spinner> : <>
                 <ShoppingCart />
                 Add To Cart
-               
+
             </>}
         </Button>
     )
