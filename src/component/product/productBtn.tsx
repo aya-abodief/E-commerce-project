@@ -27,7 +27,7 @@ export default function BtnCart({ productId, className }: { productId: string, c
         catch (error) {
             console.log(error);
             if (error instanceof Error) {
-                toast.error("ypu must logged in to do this action", { position: "top-center" })
+                toast.error("YOU must logged in to do this action", { position: "top-center" })
             }
             else{
                   toast.error("some thin went wrong", { position: "top-center" })
