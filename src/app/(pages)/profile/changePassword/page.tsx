@@ -6,12 +6,13 @@ import { Input } from "@/components/ui/input"
 import { Spinner } from "@/components/ui/spinner"
 import { changePasswordSchema, changePasswordType } from "@/profile.schema/profile.schema"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useRouter } from "next/navigation"
 import React from 'react'
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 
 export default function ChangePassword() {
-
+const router = useRouter()
     const form = useForm({
       resolver:zodResolver(changePasswordSchema),
     defaultValues:
@@ -34,10 +35,12 @@ const response =await changePasswordApis(values)
 
 
 
- console.log("response",response);
+ console.log("response from change password",response);
 if(response.message=="success")
 {
-  toast.success("Password changed successfully" , {position:"top-center"})
+  toast.success("Password changed successfully please login again whith the new Password" , {position:"top-center"})
+  router.push("/login")
+
 }else
 {
   toast.error(response.message , {position:"top-center"})
